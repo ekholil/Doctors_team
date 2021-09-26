@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUser} from '@fortawesome/free-solid-svg-icons'
 import Doctor from '../Doctor/Doctor';
 import './Home.css'
 const Home = () => {
     const [doctors, setDoctors] = useState([])
-    
+    const personIcon = <FontAwesomeIcon icon={faUser} />
     useEffect(()=> {
         fetch('./data.json')
         .then(res => res.json())
         .then(data => setDoctors(data))
     }, [])
+    
     const [addedDoctor, setAddedDoctor] = useState([])
     const handleClick = doctor => {
         if(addedDoctor.indexOf(doctor) === -1){
@@ -17,9 +20,7 @@ const Home = () => {
 
         }
     }
-    // const totalCost = addedDoctor.reduce((prev, current) => {
-    //     return prev.salary + current.salary;
-    // },0)
+  
    let totalCost = 0;
    for(let i = 0; i<addedDoctor.length; i++){
        totalCost = totalCost + addedDoctor[i].salary;
@@ -32,9 +33,9 @@ const Home = () => {
            </div>
            
         </div>
-        <div className='col-md-3 mt-3'>
-            <h2>Doctors Added : {addedDoctor.length}</h2>
-            <h2>Total Cost : {totalCost}</h2>
+        <div className='col-md-3 mt-4 sidebar'>
+            <h3>{personIcon}Doctors Added : {addedDoctor.length}</h3>
+            <h3>Total Cost : ${totalCost}</h3>
             {addedDoctor.map(doctor => <p>{doctor.first_name + ' ' + doctor.last_name}</p>)}
         </div>
         </div>

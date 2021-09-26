@@ -14,7 +14,7 @@ const Doctor = (props) => {
                 <p>Email : {email}</p>
                 <p>Age : {age}</p>
                 <p>Country : {country}</p>
-                <p>Salary : {salary}</p>
+                <p>Salary : ${salary}</p>
                 <button onClick={() => props.handleClick(props.doctor)} className='button'>{cartIcon} Add to Team</button>
                 <div>
                  
