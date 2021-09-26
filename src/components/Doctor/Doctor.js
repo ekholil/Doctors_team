@@ -8,7 +8,7 @@ const Doctor = (props) => {
     const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
     return (
         <div className='col-md-4'>
-            <div className='single-doctor'>
+            <div className='single-doctor shadow'>
                 <img className='round' src={image} alt="" rounded/>
                 <h3 className='fs-3'>Name : {first_name + ' ' + last_name}</h3>
                 <p>Email : {email}</p>

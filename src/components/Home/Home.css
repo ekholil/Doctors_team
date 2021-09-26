@@ -2,4 +2,19 @@
     border: 1px solid gray;
     border-radius: 5px;
     height: fit-content;
+    
+}
+.sidebar-top{
+    padding: 20px 3px;
+    background-color: #43A047;
+    color: rgb(238, 235, 235);
+    border-radius: 5px;
+}
+.sidebar p{
+    text-align: left;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: rgba(50, 205, 50, 0.486);
+    padding: 10px;
+    margin: 2px 5px;
 }

@@ -6,6 +6,7 @@ import './Home.css'
 const Home = () => {
     const [doctors, setDoctors] = useState([])
     const personIcon = <FontAwesomeIcon icon={faUser} />
+    // fetch data
     useEffect(()=> {
         fetch('./data.json')
         .then(res => res.json())
@@ -13,6 +14,7 @@ const Home = () => {
     }, [])
     
     const [addedDoctor, setAddedDoctor] = useState([])
+    // handle click on button
     const handleClick = doctor => {
         if(addedDoctor.indexOf(doctor) === -1){
             let totalAddedDoctor = [...addedDoctor, doctor]
@@ -34,8 +36,10 @@ const Home = () => {
            
         </div>
         <div className='col-md-3 mt-4 sidebar'>
+            <div className='sidebar-top'>
             <h3>{personIcon}Doctors Added : {addedDoctor.length}</h3>
             <h3>Total Cost : ${totalCost}</h3>
+            </div>
             {addedDoctor.map(doctor => <p>{doctor.first_name + ' ' + doctor.last_name}</p>)}
         </div>
         </div>

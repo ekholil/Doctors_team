@@ -8,11 +8,15 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 5px;
+    background-color: rgba(56, 238, 56, 0.205);
 }
 .button{
     border: none;
     color: #fff;
-    background-color: limegreen;
+    background-color: #43A047;
     padding: 10px 20px;
     border-radius: 5px;
+}
+p{
+    margin-bottom: 3px !important
 }
